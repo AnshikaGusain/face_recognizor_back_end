@@ -11,7 +11,7 @@ import {image} from "./controllers/ImageBackend.js";
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
+      host : 'postgresql-defined-44133',
       port : 5432,
       user : 'postgres',
       password : 'An$hika13#',
