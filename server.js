@@ -11,7 +11,7 @@ import {image} from "./controllers/ImageBackend.js";
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString : 'postgresql-defined-44133',
+      connectionString : process.env.DATABASE_URL,
       ssl:true
     }
   });
