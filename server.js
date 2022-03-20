@@ -8,6 +8,9 @@ import profile from "./controllers/ProfileBackend.js";
 // import {image,handleImageUrl} from "./controllers/ImageBackend.js";
 import {image} from "./controllers/ImageBackend.js";
 
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+
 const db = knex({
     client: 'pg',
     connection: {
