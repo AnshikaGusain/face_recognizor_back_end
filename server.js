@@ -5,7 +5,7 @@ import knex from "knex";
 import handleRegister from "./controllers/RegisterBackend.js";
 import handleSignin from "./controllers/SignBackend.js";
 import profile from "./controllers/ProfileBackend.js";
-// import {image,handleImageUrl} from "./controllers/ImageBackend.js";
+
 import {image} from "./controllers/ImageBackend.js";
 
 
