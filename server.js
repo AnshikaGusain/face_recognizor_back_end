@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import cors from "cors";
-import knex from "knex";
+// import knex from "knex";
 import handleRegister from "./controllers/RegisterBackend.js";
 import handleSignin from "./controllers/SignBackend.js";
 import profile from "./controllers/ProfileBackend.js";
@@ -9,10 +9,11 @@ import profile from "./controllers/ProfileBackend.js";
 // import {image,handleImageUrl} from "./controllers/ImageBackend.js";
 import {image,handleImageUrl} from "./controllers/ImageBackend.js";
 import {mongoose} from "mongoose";
+import dotenv from "dotenv";
 
 
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 
 // const db = knex({
 //     client: 'pg',
@@ -24,6 +25,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const app=express();
 
+dotenv.config();
 // const saltRounds=10;
 // const pass="@n$hika";
 // const otherpass="answer";
@@ -41,7 +43,7 @@ const app=express();
 app.use(express.json());
 app.use(cors());
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb://localhost:27017/faceRecognizer");
+mongoose.connect(`mongodb+srv://admin-anshika:${process.env.PASSWORD}@cluster0.wzrpvnt.mongodb.net/faceRecognizer`);
 var validateEmail = function(email) {
     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return re.test(email)

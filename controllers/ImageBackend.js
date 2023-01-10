@@ -2,16 +2,13 @@ import Clarifai from "clarifai";
 import fetch from "node-fetch";
 globalThis.fetch=fetch;
 
-// const app = new Clarifai.App({
-//     apiKey: '6e93463d0101470584f9d7a5b13effaa'
-// });
 
 export const handleImageUrl=(req,res)=>{
     const {imageUrl}=req.body;
     const raw = JSON.stringify({
         "user_app_id": {
-          "user_id": "anshikagusain13_7448",
-          "app_id": "a156366dc46c4e40b4e86861d855a057"
+          "user_id": process.env.USER_ID,
+          "app_id": process.env.APP_ID
         },
         "inputs": [
           {
@@ -28,7 +25,7 @@ export const handleImageUrl=(req,res)=>{
         method: 'POST',
         headers: {
           'Accept': 'application/json',
-          'Authorization': 'Key e5d0996a8030467ba6edba8bc2f43306'
+          'Authorization': process.env.AUTHORIZATION
         },
         body: raw
       };
